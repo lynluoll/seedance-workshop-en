@@ -1,0 +1,28 @@
+/* Case Problem 3 part 3: multilingual versions. Every selector is scoped by a .q3l- class. */
+.q3l-q { font-size: 24px; font-weight: 600; color: var(--primary); margin-bottom: 14px; }
+.flow.q3l-flow { margin-top: 26px; }
+.q3l-flow .step { padding: 22px 28px; }
+.q3l-flow .step h3 { font-size: 32px; }
+.q3l-flow .step p { font-size: 24px; }
+
+.q3l-bottom { flex: 1; min-height: 0; display: flex; gap: 48px; margin-top: 28px; align-items: flex-start; }
+.q3l-ref { margin: 0; width: 520px; flex: none; }
+.q3l-ref figcaption, .q3l-ahead { font-size: 23px; font-weight: 600; color: var(--secondary); margin-bottom: 12px; }
+.q3l-ref img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); }
+.q3l-audios { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.q3l-arow { display: grid; grid-template-columns: 120px 1fr 300px 80px; gap: 18px; align-items: center; padding: 9px 0; border-top: 1px solid var(--border); }
+.q3l-lang { font-size: 24px; font-weight: 600; color: var(--primary); }
+.q3l-line { font-size: 22px; line-height: 1.4; color: var(--text); }
+.q3l-arow audio { width: 300px; height: 40px; }
+.q3l-dur { font-size: 22px; color: var(--secondary); font-variant-numeric: tabular-nums; text-align: right; }
+.actions.q3l-actions { margin-top: 14px; padding-top: 0; }
+
+/* Slide 2: 2 x 2 language grid */
+.practice .txt .q3l-steps li { font-size: 25px; line-height: 1.45; font-weight: 400; margin-bottom: 6px; padding-left: 52px; }
+.q3l-steps li::before { width: 34px; height: 34px; font-size: 20px; }
+.practice .bounds:has(+ .actions [data-prompt="q3l-video"]) li { font-size: 22px; }
+.media.q3l-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 24px; align-content: center; }
+.media.q3l-grid figure { flex: none; align-items: stretch; }
+.media.q3l-grid figcaption { display: flex; justify-content: space-between; align-items: baseline; font-size: 24px; margin-bottom: 8px; color: var(--primary); }
+.media.q3l-grid figcaption span { font-size: 22px; font-weight: 400; color: var(--secondary); }
+.media.q3l-grid video { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; max-height: none; }

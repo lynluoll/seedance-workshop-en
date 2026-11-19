@@ -1,0 +1,14 @@
+/* Case, question 8: sample UI, laptop result, phone result. */
+.q8-media { flex: 1; min-width: 0; display: flex; gap: 24px; align-items: flex-start; justify-content: center; padding-top: 52px; }
+.q8-media figure { margin: 0; min-width: 0; display: flex; flex-direction: column; }
+.q8-media .q8-ui { flex: 0 0 230px; }
+.q8-media .q8-bad { flex: 0 0 440px; }
+.q8-media .q8-ok { flex: 0 0 290px; }
+.q8-media figcaption { min-height: 68px; display: flex; align-items: flex-end; font-size: 23px; line-height: 1.35; font-weight: 600; color: var(--secondary); margin-bottom: 14px; }
+.q8-media video, .q8-media img { width: 100%; display: block; border-radius: 8px; border: 1px solid var(--border); background: #000; }
+.q8-media .q8-ui img { aspect-ratio: 9 / 16; object-fit: cover; background: #fff; }
+.q8-media .q8-bad video { aspect-ratio: 16 / 9; }
+.q8-media .q8-ok video { aspect-ratio: 9 / 16; }
+.q8-res { margin: 14px 0 0; font-size: 22px; line-height: 1.45; color: var(--secondary); }
+.q8-media .q8-bad figcaption, .q8-media .q8-bad .q8-res { color: var(--warn); }
+.q8-media .q8-ok figcaption { color: var(--primary); }

@@ -1,0 +1,26 @@
+/* Case Problem 6: background swap only, person unchanged. Every selector is scoped by a .q6- class. */
+.practice .q6-txt { width: 480px; margin-right: -24px; }
+.practice .q6-txt.q6-n4 { width: 370px; margin-right: -44px; }
+.q6-txt.q6-n4 h2 { font-size: 44px; }
+.q6-txt.q6-n4 .q6-steps li { font-size: 23px; }
+.practice .q6-txt h2 { font-size: 50px; }
+.practice .q6-txt .problem { font-size: 26px; margin-bottom: 20px; }
+.practice .q6-steps li { font-size: 25px; line-height: 1.45; font-weight: 400; margin-bottom: 14px; }
+.q6-steps li b { display: block; color: var(--primary); font-weight: 600; }
+.q6-txt .bounds { margin-top: 10px; padding: 14px 18px; }
+.q6-txt .bounds li { font-size: 22px; line-height: 1.45; margin-bottom: 4px; }
+.q6-txt .bounds li::before { top: 13px; }
+.q6-txt .actions { margin-top: 16px; padding-top: 0; }
+
+.q6-media { flex-direction: column; align-items: center; gap: 18px; }
+.q6-sync { flex: none; }
+.q6-row { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; }
+.q6-media .q6-row figure { flex: 0 0 auto; margin: 0; }
+.q6-media figcaption { min-height: 62px; text-align: center; }
+.q6-media .q6-row video, .q6-media .q6-row img {
+  display: block; width: 356px; height: 632px; max-height: none; object-fit: cover;
+  border-radius: 8px; border: 1px solid var(--border); background: #000;
+}
+.q6-media.q6-n4 .q6-row { gap: 4px; }
+.q6-media.q6-n4 .q6-row video, .q6-media.q6-n4 .q6-row img { width: 302px; height: 537px; }
+.q6-arrow { color: var(--primary); font-size: 30px; padding-top: 62px; flex: none; }

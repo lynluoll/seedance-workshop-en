@@ -1,0 +1,9 @@
+/* Case, question 5: text page with three points. */
+.q5-q { font-size: 24px; font-weight: 600; color: var(--primary); margin-bottom: 14px; }
+.q5-problem { font-size: 28px; line-height: 1.5; color: var(--secondary); margin: 0 0 44px; }
+.q5-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; flex: 1; max-height: 560px; }
+.q5-cards.q5-three { grid-template-columns: repeat(3, 1fr); }
+.q5-card { border: 1px solid var(--border); border-top: 6px solid var(--primary); border-radius: 8px; padding: 44px 40px; }
+.q5-n { font-size: 28px; font-weight: 700; color: var(--primary); }
+.q5-card h3 { font-size: 42px; line-height: 1.25; margin: 18px 0 24px; }
+.q5-card p { font-size: 30px; line-height: 1.6; color: var(--secondary); margin: 0; }

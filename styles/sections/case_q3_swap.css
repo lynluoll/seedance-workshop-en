@@ -1,0 +1,27 @@
+/* Problem 3 part 2: product swap */
+.q3s-page { gap: 48px; }
+.q3s-page .txt { width: 620px; }
+.q3s-page h2 { font-size: 50px; }
+.q3s-page .problem { font-size: 25px; margin-bottom: 16px; }
+.q3s-page .steps li { font-size: 24px; line-height: 1.45; margin-bottom: 10px; }
+.q3s-page .bounds { padding: 14px 20px; }
+.q3s-page .bounds li { font-size: 22px; line-height: 1.45; }
+.q3s-page .actions { padding-top: 14px; }
+
+.q3s-media { gap: 18px; align-items: flex-start; align-self: center; }
+.q3s-media figure { flex: 1 1 0; }
+.q3s-media figcaption { font-size: 22px; margin-bottom: 10px; line-height: 1.3; min-height: 58px; display: flex; flex-direction: column; justify-content: flex-end; }
+.q3s-media video { max-height: 560px; }
+.q3s-media figure.q3s-ref { flex: 0.62 1 0; }
+.q3s-media figure.q3s-ref img { max-height: 330px; }
+.q3s-how { font-size: 19px; line-height: 1.4; color: var(--secondary); margin: 10px 0 0; text-align: center; }
+.q3s-res { font-size: 20px; line-height: 1.4; margin: 6px 0 0; text-align: center; font-weight: 600; }
+.q3s-res.ok { color: #18794e; }
+
+/* Product swap: reference image + two equal-height videos */
+.q3s-media.three { gap: 28px; }
+.q3s-media.three figure { flex: 0 0 auto; }
+.q3s-media.three video { height: 680px; max-height: none; width: auto; }
+.q3s-media.three figure.q3s-ref { flex: 0 0 190px; }
+.q3s-media.three figure.q3s-ref img { max-height: 300px; }
+.q3s-media.three .q3s-res { max-width: 382px; }

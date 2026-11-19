@@ -1,0 +1,7 @@
+/* Chapter 06: Workshop & Q&A. Every selector is scoped by a .c6- class. */
+.c6-k { font-size: 24px; font-weight: 600; color: var(--primary); margin-bottom: 14px; }
+.c6-task h2 { font-size: 56px; margin-bottom: 32px; }
+.c6-brief { margin: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; border-top: 2px solid var(--text); }
+.c6-row { display: flex; flex-direction: column; justify-content: center; gap: 8px; min-height: 164px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+.c6-row dt { font-size: 24px; font-weight: 600; color: var(--primary); }
+.c6-row dd { margin: 0; font-size: 30px; line-height: 1.4; font-weight: 500; color: var(--text); }

@@ -1,0 +1,59 @@
+/* Polish pass, 2026-11-19: cross-chapter harmonisation. Loaded last (file name sorts after
+   every chapter stylesheet), so these rules win over per-chapter ones of equal specificity. */
+
+/* Headings: no single-character last line. */
+h2, .section h1 { text-wrap: balance; }
+.section .lead { text-wrap: pretty; }
+
+/* Kicker labels above the title: one style in every chapter. */
+.practice .q, .q3r-q, .q3l-q, .q5-q, .c5-q, .c3-k { font-size: 24px; font-weight: 600; color: var(--primary); margin-bottom: 14px; }
+.practice .q.flashc { color: var(--flash); }
+
+/* Captions and small labels: nothing under 20 px on the 1920 stage. */
+.lchip span { font-size: 20px; }
+.ldemo { gap: 14px; }
+.q3s-how { font-size: 20px; }
+
+/* Body text at 24 px where the page has room. */
+.q3r-dbounds li { font-size: 24px; }
+.q3r-rules li { font-size: 24px; margin-bottom: 8px; }
+
+/* Bad Case overview: nine cards in a 3 x 3 grid that fills the page. */
+.methods { gap: 28px; margin-top: 32px; }
+.method { padding: 40px 44px; min-height: 200px; border-top: 6px solid var(--primary); }
+.method .q { font-size: 24px; }
+.method h3 { font-size: 42px; margin: 14px 0 0; }
+
+/* Problem 3 frame-split comparison page: centre the comparison. */
+.q3r-row { justify-content: center; gap: 36px; }
+.q3r-rlabel { width: 380px; }
+.q3r-rlabel p { font-size: 24px; }
+.q3r-row video { height: 456px; }
+
+/* Chapter 03 opening table: use the page height. */
+.c3-dl2 > div { padding: 19px 0; }
+.c3-dl2 dt, .c3-dl2 dd, .c3-dl2.tight dt, .c3-dl2.tight dd { font-size: 28px; }
+.c3-dl2 dt { width: 170px; }
+.c3-dl2.tight dt { width: 150px; }
+.c3-ph { font-size: 30px; }
+.c3-pos { margin-top: 40px; font-size: 30px; }
+
+/* Chapter 05 Case 2: larger clips. */
+.c5-grid3 { grid-template-columns: repeat(3, 440px); }
+.c5-grid3 video, .c5-grid3 img { width: 440px; height: 248px; }
+
+/* Chapter 06: homework cards sized like the Problem 5 cards. */
+.cols.three.hw { margin-top: 36px; flex: 1; max-height: 520px; }
+.hw .card { border-top: 6px solid var(--primary); padding: 44px 40px; }
+.hw .card .q { font-size: 28px; font-weight: 700; }
+.hw .card h3 { font-size: 42px; line-height: 1.25; margin: 18px 0 24px; }
+.hw .card p { font-size: 30px; line-height: 1.6; }
+
+/* Fit fixes */
+.practice:has(.q3l-grid) h2 { font-size: 48px; }
+.cover { padding-bottom: 104px; }
+.method { min-height: 224px; }
+
+/* Overview with seven cards in four columns: titles stay on one line. */
+.method { padding: 36px 32px; }
+.method h3 { font-size: 36px; white-space: nowrap; }

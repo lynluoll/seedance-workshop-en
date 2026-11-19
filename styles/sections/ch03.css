@@ -1,0 +1,76 @@
+/* Chapter 03: category prompt Skills. All rules are scoped under .c3 / .c3-*. */
+.slide.c3 h2 { font-size: 50px; line-height: 1.25; margin: 0 0 28px; }
+.c3-k { font-size: 24px; font-weight: 600; color: var(--primary); margin-bottom: 10px; }
+.c3-lab { font-size: 24px; font-weight: 600; color: var(--secondary); margin-bottom: 10px; }
+.c3-lab.on { color: var(--primary); }
+
+/* 1. general vs category */
+.c3-two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.c3-panel { border: 1px solid var(--border); border-radius: 8px; padding: 30px 36px 22px; }
+.c3-panel.on { border-color: var(--primary); background: var(--selected); }
+.c3-ph { font-size: 28px; font-weight: 600; margin-bottom: 14px; }
+.c3-panel.on .c3-ph { color: var(--primary); }
+.c3-dl2 { margin: 0; }
+.c3-dl2 > div { display: flex; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+.c3-dl2 dt { flex: none; width: 150px; font-size: 25px; font-weight: 600; }
+.c3-dl2 dd { margin: 0; font-size: 25px; line-height: 1.45; color: var(--secondary); }
+.c3-dl2.tight dt { width: 116px; font-size: 24px; color: var(--primary); }
+.c3-dl2.tight dd { font-size: 24px; color: var(--text); }
+.c3-pos { margin: 30px 0 0; font-size: 28px; line-height: 1.5; }
+
+/* 2. overview tiles */
+.c3-legend { display: flex; align-items: center; gap: 40px; font-size: 24px; color: var(--secondary); margin: -6px 0 24px; }
+.c3-legend span { display: flex; align-items: center; gap: 10px; }
+.c3-legend i { width: 28px; height: 10px; border-radius: 2px; background: var(--fam); }
+.c3-legend .hk { margin-left: auto; }
+.c3-legend .hk em { font-style: normal; font-weight: 600; color: var(--primary); }
+.fa { --fam: #1f9d8f; } .fb { --fam: #64748b; } .fc { --fam: #c2872b; } .fd { --fam: var(--primary); }
+.c3-tiles { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: 1fr 1fr; gap: 24px; }
+.c3-tile { display: flex; flex-direction: column; align-items: flex-start; text-align: left; color: inherit; background: #fff; border: 1px solid var(--border); border-top: 10px solid var(--fam); border-radius: 8px; padding: 20px 22px 20px; min-width: 0; }
+.c3-tile:hover { background: var(--surface); }
+.c3-tile b { font-size: 38px; line-height: 1.2; font-weight: 600; white-space: nowrap; }
+.c3-tile small { font-size: 22px; line-height: 1.35; color: var(--secondary); margin-top: 6px; white-space: nowrap; }
+.c3-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.c3-chips i { font-style: normal; font-size: 24px; line-height: 1; padding: 9px 12px; border-radius: 4px; background: var(--surface); border: 1px solid var(--border); white-space: nowrap; }
+.c3-tile em { margin-top: auto; align-self: stretch; padding-top: 14px; border-top: 1px solid var(--border); font-style: normal; font-size: 26px; line-height: 1.3; font-weight: 600; color: var(--primary); white-space: nowrap; }
+
+/* 3. category page */
+.c3-cat { display: flex; gap: 56px; flex: 1; min-height: 0; }
+.c3-left { width: 610px; flex: none; }
+.c3-right { flex: 1; min-width: 0; }
+.c3-say { background: var(--surface); border-radius: 8px; padding: 18px 24px 16px; margin-bottom: 22px; }
+.c3-say p { margin: 0; font-size: 32px; font-weight: 600; line-height: 1.3; }
+.c3-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.c3-tags span { font-size: 24px; padding: 6px 14px; border: 1px solid var(--border); border-radius: 4px; background: #fff; }
+.c3-hooks { list-style: none; margin: 0; padding: 0; }
+.c3-hooks li { font-size: 24px; line-height: 1.42; color: var(--secondary); margin-bottom: 14px; }
+.c3-hooks li b { display: block; color: var(--text); font-weight: 600; font-size: 26px; }
+.c3-six { font-size: 28px; }
+.c3-six th { width: 160px; text-align: left; vertical-align: top; font-weight: 600; color: var(--primary); padding: 24px 0; border-top: 1px solid var(--border); }
+.c3-six td { padding: 24px 0 24px 12px; line-height: 1.45; border-top: 1px solid var(--border); }
+.c3-case { display: flex; gap: 20px; align-items: center; margin-top: 6px; padding-top: 14px; border-top: 1px solid var(--border); }
+.c3-case img { height: 104px; width: auto; border-radius: 6px; border: 1px solid var(--border); display: block; }
+.c3-btns { display: flex; gap: 12px; }
+.c3-btns .btn { font-size: 20px; padding: 8px 16px; }
+
+/* beverage case */
+.c3-vs { display: grid; grid-template-columns: 360px 1fr 1.25fr; gap: 32px; flex: 1; min-height: 0; max-height: 700px; }
+.c3-brief img { width: 250px; height: 250px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); display: block; margin-bottom: 22px; }
+.c3-brief p { margin: 0 0 20px; font-size: 24px; line-height: 1.5; }
+.c3-col { border: 1px solid var(--border); border-radius: 8px; padding: 28px 30px; display: flex; flex-direction: column; }
+.c3-col.on { border-color: var(--primary); background: var(--selected); }
+.c3-col > p { margin: 0; font-size: 25px; line-height: 1.6; }
+.c3-col .c3-dl2 > div:first-child { border-top: 0; padding-top: 0; }
+.c3-col .c3-dl2 > div { border-color: #d5e2ff; }
+
+/* download */
+.c3-down { display: flex; gap: 64px; flex: 1; min-height: 0; }
+.c3-dleft { width: 660px; flex: none; display: flex; flex-direction: column; }
+.c3-dleft .steps { margin-bottom: 28px; }
+.c3-dleft .actions { margin-top: 12px; padding-top: 0; }
+.c3-dleft a.btn { text-decoration: none; display: inline-block; }
+.c3-zips { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; align-content: start; }
+.c3-zip { display: block; text-decoration: none; color: inherit; border: 1px solid var(--border); border-radius: 8px; padding: 16px 22px; background: #fff; }
+.c3-zip:hover { border-color: var(--primary); background: var(--selected); }
+.c3-zip b { display: block; font-size: 26px; font-weight: 600; color: var(--primary); }
+.c3-zip span { display: block; font-size: 22px; color: var(--secondary); margin-top: 4px; }

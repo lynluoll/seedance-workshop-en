@@ -1,0 +1,81 @@
+/* Chapter 04: layer decomposition. All selectors are prefixed with .c4- */
+
+.c4-alpha {
+  background-color: #fff;
+  background-image: linear-gradient(45deg, #d9dde5 25%, transparent 25%, transparent 75%, #d9dde5 75%),
+                    linear-gradient(45deg, #d9dde5 25%, transparent 25%, transparent 75%, #d9dde5 75%);
+  background-size: 24px 24px; background-position: 0 0, 12px 12px;
+}
+.c4-cap { font-size: 24px; font-weight: 600; color: var(--secondary); margin-bottom: 14px; }
+
+/* 1. What it does */
+.c4-what { display: flex; gap: 40px; align-items: flex-start; margin-top: 24px; }
+.c4-in { width: 430px; flex: none; }
+.c4-in img { width: 100%; display: block; border-radius: 8px; border: 1px solid var(--border); }
+.c4-req { width: 410px; flex: none; }
+.c4-params { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--text); }
+.c4-params li { padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 24px; line-height: 1.4; font-weight: 500; display: flex; gap: 16px; align-items: baseline; }
+.c4-params b { flex: none; width: 76px; font-size: 21px; font-weight: 600; color: var(--primary); }
+.c4-params code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 21px; }
+.c4-arrow { font-size: 44px; line-height: 1; color: var(--primary); margin: 16px 0 12px; transform: rotate(90deg); width: 44px; }
+.c4-out { flex: 1; min-width: 0; }
+.c4-lgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+.c4-lcard img { width: 100%; height: 214px; display: block; border-radius: 8px; border: 1px solid var(--border); object-fit: contain; }
+.c4-lname { font-size: 25px; font-weight: 600; margin-top: 8px; }
+.c4-lsize { font-size: 20px; line-height: 1.35; white-space: nowrap; color: var(--secondary); font-variant-numeric: tabular-nums; }
+
+/* 2. Interactive showcase */
+.c4-show { display: flex; gap: 48px; align-items: stretch; margin-top: 4px; }
+.c4-view { position: relative; width: 740px; height: 740px; flex: none; border-radius: 8px; background: #14161a; overflow: hidden; perspective: 2200px; }
+.c4-stage { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 320ms ease; }
+.c4-layer { position: absolute; inset: 0; width: 100%; height: 100%; display: block; transition: transform 320ms ease, opacity 200ms ease, outline-color 200ms, background-color 200ms; outline: 2px solid transparent; outline-offset: -2px; }
+.c4-layer[hidden] { display: block; opacity: 0; pointer-events: none; }
+.c4-stage.c4-exploded .c4-layer { outline-color: rgba(255, 255, 255, .5); background-color: rgba(255, 255, 255, .28); }
+.c4-exact { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.c4-exact[hidden] { display: none; }
+/* Dragging: the stage takes the pointer; images never start a native drag or selection. */
+.c4-view { touch-action: none; user-select: none; -webkit-user-select: none; }
+.c4-view img { pointer-events: none; -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
+.c4-view.c4-grab { cursor: grab; }
+.c4-view.c4-grabbing { cursor: grabbing; }
+.c4-stage.c4-dragging .c4-layer { transition: opacity 200ms ease; }
+.c4-sel { position: absolute; box-sizing: border-box; border: 2px solid var(--primary); border-radius: 3px; pointer-events: none; z-index: 2; }
+.c4-sel[hidden] { display: none; }
+.c4-sel span { position: absolute; left: -2px; bottom: 100%; padding: 2px 10px; background: var(--primary); color: #fff; font-size: 20px; font-weight: 600; white-space: nowrap; border-radius: 3px 3px 0 0; }
+.c4-actions .btn[disabled] { opacity: .45; cursor: default; }
+.c4-side { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.c4-label { font-size: 22px; font-weight: 600; color: var(--secondary); margin: 0 0 12px; }
+.c4-presets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 22px; }
+.c4-pre { min-height: 64px; border: 1px solid var(--border); border-radius: 4px; background: #fff; color: var(--text); font-size: 26px; font-weight: 500; }
+.c4-pre:hover { border-color: var(--primary); }
+.c4-pre[aria-pressed='true'] { background: var(--primary); border-color: var(--primary); color: #fff; }
+.c4-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.c4-chip { border: 1px solid var(--border); border-radius: 4px; background: var(--surface); padding: 9px 18px; text-align: left; color: #8a909b; display: flex; align-items: baseline; gap: 14px; }
+.c4-chip b { font-size: 25px; font-weight: 600; flex: none; }
+.c4-chip span { font-size: 21px; }
+.c4-chip:hover { border-color: var(--primary); }
+.c4-chip[aria-pressed='true'] { background: var(--selected); border-color: var(--primary); color: var(--text); }
+.c4-chip[aria-pressed='true'] span { color: var(--primary); }
+.c4-chip:not([data-group]) { grid-column: 1 / -1; }
+.c4-explode { display: flex; align-items: center; gap: 20px; font-size: 24px; font-weight: 500; color: var(--secondary); }
+.c4-explode input { flex: 1; accent-color: var(--primary); height: 32px; }
+.c4-status { margin: 18px 0 0; padding: 14px 20px; border-radius: 6px; background: var(--surface); border: 1px solid var(--border); font-size: 24px; line-height: 1.45; min-height: 100px; }
+.c4-actions { margin-top: auto; display: flex; gap: 16px; padding-top: 16px; }
+
+/* 3. Uses */
+.c4-uses { display: flex; justify-content: space-between; gap: 36px; align-items: flex-start; margin-top: 4px; }
+.c4-uses figure { margin: 0; flex: none; }
+.c4-uses figcaption { font-size: 22px; line-height: 1.4; color: var(--secondary); margin-bottom: 12px; min-height: 92px; }
+.c4-uses figcaption b, .c4-urow b { display: block; font-size: 26px; font-weight: 600; color: var(--primary); margin-bottom: 2px; }
+.c4-uses img { display: block; border-radius: 8px; border: 1px solid var(--border); }
+.c4-u916 { width: 310px; }
+.c4-u916 img { width: 310px; height: 551px; }
+.c4-u11 { width: 551px; }
+.c4-u11 img { width: 551px; height: 551px; }
+.c4-ucol { flex: none; width: 660px; }
+.c4-u169 img { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+.c4-urow { display: flex; gap: 22px; align-items: center; margin-top: 18px; font-size: 22px; line-height: 1.45; color: var(--secondary); }
+.c4-urow img { width: 172px; height: 172px; flex: none; }
+.c4-foot { margin: 22px 0 0; padding: 14px 20px; border-radius: 6px; background: var(--surface); border: 1px solid var(--border); font-size: 24px; line-height: 1.45; }
+
+@media (prefers-reduced-motion: reduce) { .c4-stage, .c4-layer { transition: none; } }
